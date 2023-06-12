@@ -25,8 +25,6 @@ public:
 
         RegisterClass(&wc);
 
-        // Create the window.
-
         HWND hwnd = CreateWindowEx(
             0, // Optional window styles.
             class_name, // Window class
@@ -42,16 +40,14 @@ public:
             nullptr    // Additional application data
             );
 
-        if (hwnd == nullptr)
-        {
+        if (hwnd == nullptr) {
             return 1;
         }
 
         ShowWindow(hwnd, cmd_show);
 
         MSG msg;
-        while (GetMessage(&msg, nullptr, 0, 0) > 0)
-        {
+        while (GetMessage(&msg, nullptr, 0, 0) > 0) {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
@@ -134,17 +130,19 @@ private:
     HWND buttons[sizeof ButtonSpec];
 
     void create_buttons(HWND hwnd, LPARAM lparam) {
-        auto dx = LOWORD(GetDialogBaseUnits());
-        auto dy = HIWORD(GetDialogBaseUnits());
+        float dx = LOWORD(GetDialogBaseUnits());
+        float dy = HIWORD(GetDialogBaseUnits());
         auto i = 0u;
         for (const auto& btn : ButtonSpec) {
-            buttons[i] = (CreateWindow(TEXT("button"),
-                                       btn.caption,
-                                       WS_CHILD | WS_VISIBLE | btn.style,
-                                       dx, dy * (1 + 2 * i),
-                                       20 * dx, 9 * dy / 5,
-                                       hwnd, reinterpret_cast<HMENU>(i),
-                                       reinterpret_cast<LPCREATESTRUCT>(lparam)->hInstance, nullptr));
+            buttons[i] = CreateWindow(TEXT("button"),
+                                      btn.caption,
+                                      WS_CHILD | WS_VISIBLE | btn.style,
+                                      dx, dy * (1 + 2 * i),
+                                      20 * dx, 7 * dy / 4,
+                                      hwnd,
+                                      reinterpret_cast<HMENU>(i),
+                                      reinterpret_cast<LPCREATESTRUCT>(lparam)->hInstance,
+                                      nullptr);
             i++;
         }
     }
