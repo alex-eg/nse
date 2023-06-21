@@ -1,0 +1,949 @@
+* Perks table
+| Perk                              | Stacks  | Description                                                                                                          | Notes                                                                                                                       |
+|-----------------------------------+---------+----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------|
+| Ciritcal Hit +                    | Yes     | Increases critical hit chance                                                                                        | Increases critical hit chance all of the player's spells by 10%. Stacks linearly, adding 10% critical hit chance per stack. |
+| Breathless                        | Yes     | You can no longer drown, and can move in liquids with ease.                                                          |                                                                                                                             |
+| Greed                             | Yes     | You gain 2x gold per nugget.                                                                                         |                                                                                                                             |
+| Trick Greed                       | Yes (5) | 4x instead of 2x gold is dropped when death is an accident.                                                          |                                                                                                                             |
+| Gold is Forever                   | No      | Gold nuggets never disappear.                                                                                        |                                                                                                                             |
+| Trick Blood Money                 | No      | Blood money is dropped when death is an accident.                                                                    |                                                                                                                             |
+| Exploding Gold                    | No      | Nuggets of gold explode once they expire or are picked up.                                                           |                                                                                                                             |
+| Strong Levitation                 | Yes     | You can fly 100% longer.                                                                                             |                                                                                                                             |
+| Faster Levitation                 | Yes     | You levitate 75% faster.                                                                                             |                                                                                                                             |
+| Faster Movement                   | Yes     | Your movement speed is increased.                                                                                    |                                                                                                                             |
+| Never Skip Leg Day                | Yes     | Your kicks deal extra damage and knockback.                                                                          |                                                                                                                             |
+| Telekinetic Kick                  | No      | You gain new telekinetic powers.                                                                                     |                                                                                                                             |
+| Repelling Cape                    | Yes (8) | Stains drop at a fast rate (when moving)                                                                             |                                                                                                                             |
+| Exploding Corpses                 | No      | Enemies explode upon death, but you gain immunity to explosive damage.                                               |                                                                                                                             |
+| Saving Grace                      | No      | If you would die and have more than 1 HP, your HP is set to 1 instead.                                               |                                                                                                                             |
+| Invisibility                      | No      | You're invisible.                                                                                                    |                                                                                                                             |
+| More Blood                        | Yes     | Blood blood blood.                                                                                                   |                                                                                                                             |
+| All-Seeing Eye                    | No      | You can now see everywhere.                                                                                          |                                                                                                                             |
+| Levitation Trail                  | Yes     | Flying leaves a trail of magical sparks that harm passing creatures.                                                 |                                                                                                                             |
+| Vampirism                         | No      | You lose 25% maximum health, but can replenish health by drinking blood. Blood doesn't affect satiation level.       |                                                                                                                             |
+| Extra Health (One-off)            | Yes     | 50% extra maximum health.                                                                                            |                                                                                                                             |
+| Stronger Hearts                   | Yes (9) | Hearts bestow double the maximum HP.                                                                                 |                                                                                                                             |
+| Glass Cannon                      | Yes (2) | Your spells deal 5x damage and have larger blast ranges, but your maximum health is capped to 50.                    |                                                                                                                             |
+| Living on the Edge                | Yes (3) | When under 25% of max HP or under 25 hp in general, your spells deal 3x damage.                                      |                                                                                                                             |
+| Extra Life                        | Yes     | Upon death you respawn with 100 health.                                                                              |                                                                                                                             |
+| Worm Attractor                    | Yes     | Worms of the world come to you.                                                                                      |                                                                                                                             |
+| Enemy Radar                       | No      | Detects nearby enemies.                                                                                              |                                                                                                                             |
+| Wand Radar                        | No      | Detects nearby wands.                                                                                                |                                                                                                                             |
+| Fire Immunity                     | No      | You take no damage from fire.                                                                                        |                                                                                                                             |
+| Toxic Immunity                    | No      | You take no damage from toxic sludge and other toxic things.                                                         |                                                                                                                             |
+| Explosion Immunity                | No      | You take no direct damage from explosions.                                                                           |                                                                                                                             |
+| Melee Immunity                    | No      | You take no damage from close-range enemy attacks.                                                                   |                                                                                                                             |
+| Electricity Immunity              | No      | You take no damage from electric shocks.                                                                             |                                                                                                                             |
+| Teleportitis                      | No      | Damage is reduced by 20%. Every time you take damage, you teleport away.                                             |                                                                                                                             |
+| Teleportitis Dodge                | No      | You teleport a short distance away when an enemy projectile is near.                                                 |                                                                                                                             |
+| Stainless Armour                  | Yes     | You take 50% less damage as long as you have no active stain status effect.                                          |                                                                                                                             |
+| Tinker with Wands Everywhere      | No      | A divine blessing allows you to tinker with wands everywhere.                                                        |                                                                                                                             |
+| No Wand Tinkering                 | No      | Wands cannot be tinkered with, but enemies may drop blood money.                                                     | Gives a 6% chance for an enemy to drop blood money instead of normal gold.                                                  |
+| Wand Experimenter                 | Yes     | Firing newly found and unmodified wands heals you.                                                                   |                                                                                                                             |
+| Bombs Materialized                | No      | Bomb-like spells can be placed in the ITEMS space in inventory and thrown without a wand.                            | TNT, Bomb, Glitter Bomb, Propane Tank and Holy Bomb spells may now occupy item slots.                                       |
+| Homing Shots                      | No      | All your spells home towards enemies very slightly.                                                                  |                                                                                                                             |
+| Boomerang Spells                  | No      | Your spells arc towards you, but gain extra speed and deal extra damage.                                             |                                                                                                                             |
+| Unlimited Spells                  | No      | Most spells are now unlimited.                                                                                       |                                                                                                                             |
+| Freeze Field                      | No      | Freezes liquids around you.                                                                                          |                                                                                                                             |
+| Gas Fire                          | No      | Gases near you ignite automatically.                                                                                 |                                                                                                                             |
+| Dissolve Powders                  | No      | Sand and other soft, powdery materials dissolve quickly in your presence.                                            |                                                                                                                             |
+| Slime Blood                       | Yes     | You bleed slime, but slime no longer slows you down and you have higher projectile resistance.                       | Confers 25% projectile resistance, applied directly to the player's current damage multipliers.                             |
+| Oil Blood                         | No      | You bleed fast-burning oil, but are immune to fire.                                                                  |                                                                                                                             |
+| Permanent Shield                  | Yes (5) | You gain a small, permanent shield.                                                                                  |                                                                                                                             |
+| Revenge Explosion                 | Yes     | You release a magical explosion upon taking damage, and gain 25% resistance against explosions.                      |                                                                                                                             |
+| Revenge Tentacle                  | Yes     | You summon a monstrous tentacle upon taking damage, and gain 25% resistance against projectiles.                     |                                                                                                                             |
+| Revenge Bullets                   | Yes     | You return projectiles back to enemies upon taking damage, and gain 20% resistance against projectiles & explosions. |                                                                                                                             |
+| Lukki Mutation                    | Yes (3) | You grow curious additional limbs that fight for you.                                                                |                                                                                                                             |
+| Plague Rats                       | Yes (5) | Enemies that die near you spawn hungry rats to serve your bidding.                                                   |                                                                                                                             |
+| Feared by Worms                   | No      | Worms run away from you, and worms and lukkis no longer destroy ground while burrowing.                              |                                                                                                                             |
+| Projectile Repulsion Field        | Yes     | Most projectiles are repulsed by your presence, but you take slightly more projectile damage.                        |                                                                                                                             |
+| Projectile Slower                 | Yes     | Projectiles near you slow down.                                                                                      |                                                                                                                             |
+| Projectile Repulsion Sector       | Yes     | Projectiles that fly into a small sector in front of you get blown away.                                             |                                                                                                                             |
+| Projectile Eater                  | No      | Projectiles that fly into a small sector behind you disappear.                                                       |                                                                                                                             |
+| Phasing                           | Yes     | Projectiles seemingly phase through you.                                                                             |                                                                                                                             |
+| Angry Ghost                       | Yes     | An angry spirit comes to your aid, copying nearby spells and projectiles                                             |                                                                                                                             |
+| Homunculus                        | Yes     | Every time you leave a Holy Mountain, a helpful homunculus is summoned.                                              |                                                                                                                             |
+| Electricity                       | No      | You're immune to electric damage but metal and liquids electrify around you constantly. Look out!                    |                                                                                                                             |
+| Attract Gold                      | Yes (6) | Gold nuggets gravitate towards you.                                                                                  |                                                                                                                             |
+| Extra Knockback on Spells         | Yes     | Your spells knock enemies back more.                                                                                 |                                                                                                                             |
+| Concentrated Spells               | Yes     | Your spells have lower spread and extra damage, but have increased cast delay.                                       |                                                                                                                             |
+| Low Recoil                        | No      | Recoil caused by your spells is greatly reduced, but your spells fly slightly slower.                                |                                                                                                                             |
+| Bouncing Spells                   | No      | Almost all your spells bounce around.                                                                                |                                                                                                                             |
+| Faster Projectiles                | No      | Your projectile spells fly faster than before.                                                                       |                                                                                                                             |
+| Always Cast (One-off)             | Yes     | Adds a random spell as "Always Cast" to the equipped wand.                                                           | A wand can have a maximum of 4 Always Cast slots.                                                                           |
+| High Mana, Low Capacity (One-off) | Yes     | Your one (1) currently held wand loses half its capacity, but gains more mana.                                       |                                                                                                                             |
+| No More Shuffle                   | No      | Most of the wands will be non shuffling.                                                                             |                                                                                                                             |
+| No More Knockback                 | No      | Enemies can't knock you back.                                                                                        |                                                                                                                             |
+| Projectile Duplication            | Yes     | Your projectile spells have a chance to duplicate, but you're more vulnerable to projectile damage                   |                                                                                                                             |
+| Faster Wands (One-off)            | Yes     | All four (4) wands you're currently carrying gain a bonus to their cast delay & reload time.                         |                                                                                                                             |
+| Extra Wand Capacity (One-off)     | Yes     | All four (4) wands you're currently carrying gain 1-3 additional spell slots (to a maximum of 25).                   |                                                                                                                             |
+| Extra Perk                        | Yes (5) | From now on, you will find an extra perk in every Holy Mountain.                                                     |                                                                                                                             |
+| Perk Lottery                      | Yes (6) | When you pick a perk, there's a 50% chance the others won't disappear.                                               |                                                                                                                             |
+| Extra Item in Holy Mountain       | Yes (5) | Additional item in every shop you haven't visited.                                                                   |                                                                                                                             |
+| More Hatred                       | Yes     | Creatures in the world are more aggressive towards each other.                                                       |                                                                                                                             |
+| More Love                         | Yes     | Creatures in the world are more friendly to each other.                                                              |                                                                                                                             |
+| Peace with Gods                   | No      | You make peace with your gods.                                                                                       |                                                                                                                             |
+| Kills to Mana                     | No      | Every time an enemy near you dies, you release mana-recharging liquid.                                               |                                                                                                                             |
+| Pinpointer                        | Yes     | Your spells fly faster and have lower spread, and you have a handy sightline for aiming!                             |                                                                                                                             |
+| Personal Plasma Beam              | Yes     | You constantly fire a devastating plasma beam, but you fire spells much slower.                                      |                                                                                                                             |
+| Close Call                        | Yes (3) | You gain additional chance to deal critical hits as long as there are enemies near you.                              |                                                                                                                             |
+| Contact Damage                    | No      | Enemies near you take damage; the damage is higher the lower your health gets.                                       |                                                                                                                             |
+| Cordyceps                         | No      | Fungal creatures spawn from the corpses of enemies killed by you.                                                    |                                                                                                                             |
+| Eat Your Vegetables               | No      | You gain more damage the more satiated you are, but you start losing health if your stomach is empty.                |                                                                                                                             |
+| Fungal Colony                     | No      | Slime near you spontaneously turns into fungal creatures.                                                            |                                                                                                                             |
+| Fungal Disease                    | Yes (3) | When near danger, you sprout fungal growths.                                                                         |                                                                                                                             |
+| Gamble                            | Yes     | You gain two random perks.                                                                                           |                                                                                                                             |
+| Gas Blood                         | No      | You bleed flammable gas instead of blood.                                                                            |                                                                                                                             |
+| Healthy Exploration               | No      | Every time you visit a new area, you regain 60 health.                                                               |                                                                                                                             |
+| Hungry Ghost                      | Yes (5) | Summons a happy minion who'll eat an enemy projectile every now and then.                                            |                                                                                                                             |
+| Item Radar                        | No      | You can sense nearby items.                                                                                          |                                                                                                                             |
+| Lukki Minion                      | No      | Summons a lukki minion to your help.                                                                                 |                                                                                                                             |
+| Mournful Spirit                   | No      | Dying creatures leave behind a spirit that deals damage in a small area.                                             |                                                                                                                             |
+| Rage-fueled Levitation            | No      | Killing an enemy makes you replenish some of your levitation power.                                                  |                                                                                                                             |
+| Revenge Rats                      | No      | When you take damage, there's a chance that you'll spawn a helpful rat minion.                                       |                                                                                                                             |
+| Spontaneous Generation            | No      | Vomit near you evolves into helpful rat minions                                                                      |                                                                                                                             |
+| Summon Sädekivi                   | Yes     | You gain an artefact that allows you to call the celestial rage.                                                     |                                                                                                                             |
+| Iron Stomach                      | No      | You no longer suffer from negative effects of eating.                                                                |                                                                                                                             |
+|-----------------------------------+---------+----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------|
+| Leggy Mutation                    | Yes     | You grow disturbing looking limbs that fight for you.                                                                | Dropped by Leggy Mimics (Matkija)                                                                                           |
+| Curse of Greed!                   | Yes (?) | You gain 3x gold, but are terribly cursed!                                                                           | Received by picking up the Eternal Wealth in the shrine next to the first branch of the Giant Tree                          |
+| Spatial Awareness                 | No      | If you stop for a moment, you can sense your location relative to the Mountain.                                      | This perk is dropped by Kolmisilmän silmä.                                                                                  |
+| Moon Radar                        | No      | You can sense lunar energy.                                                                                          | This perk only appears inside the ??? east of the Overgrown Cavern.                                                         |
+|-----------------------------------+---------+----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------|
+
+* Dump
+** Critical Hit +
+Increased critical hit chance. 	Yes 	Increases critical hit chance all of the player's spells by 10%.
+
+Stacks linearly, adding 10% critical hit chance per stack.
+Perk breath underwater 	Breathless 	You can no longer drown, and can move in liquids with ease. 	Yes 	You swim faster, and have Immunity to suffocating in liquids, gasses, and even being buried in powders, like snow and coal. You will still be damaged by acid and lava.
+
+If you are polymorphed into a small worm or similar and transform back while inside of a wall, you will not suffocate in the wall.
+
+This affects fall speed as well. Stacking a couple or more makes movement in liquid even faster than on land.
+
+Anti-synergistic with Freeze Field, as you will no longer be able to swim in any liquid that can be frozen by it.
+** Greed
+You gain 2x gold per nugget. 	Yes 	Stacking doubles the previously collected amount of gold.
+
+For example, stacking twice will grant 4x the gold, and thrice 8x, and so on.
+** Trick Greed
+4x instead of 2x gold is dropped when death is an accident. 	Yes
+
+Max 5, but not removed from the pool
+	Methods of achieving "trick kills" include, but are not limited to; killing enemies with physics damage (like from Summon Rock, thrown Emerald Tablets, etc), when enemies burn to death, as well as electric currents running through liquids and metal (such as from Electric Charge).
+
+Deaths from material damage (like Poison) will also work.
+
+"Non-projectile" explosions from environmental explosives or explosive chemical reactions (and even a few spells like Dormant Crystal and Unstable Crystal, along with their trigger variants) can also cause trick kills.
+
+Stacks exponentially, i.e. 2 stacks will grant 8x gold, 3 stacks 16x gold etc.
+** Gold is Forever
+Gold nuggets never disappear. 	No 	This perk can be incredibly valuable, allowing you to get every bit of gold without needing to rush.
+
+It can cause performance issues in long runs where gold nuggets may pile up.
+
+Gold nuggets can still be destroyed via Luminous Drill and Black Hole.
+
+Synergizes well with perks that provide Blood Money, as you will essentially have healing nuggets of (red) gold around until they're picked up (also letting you defer picking them up if you have full health at that moment).
+** Trick Blood Money
+Blood money is dropped when death is an accident. 	No 	All gold nuggets dropped via "trick kills" will heal you small amounts in proportion to the value of each individual nugget. The nuggets will be ruby rather than gold, so it's quite easy to distinguish.
+
+Methods of achieving "trick kills" include, but are not limited to; killing enemies with physics damage (like from Summon Rock, thrown Emerald Tablets, etc), when enemies burn to death, as well as electric currents running through liquids and metal (such as from Electric Charge). Deaths from material damage (like Poison) will also work.
+
+This perk does not stack, however Trick Greed does, and will synergize well with Trick Blood Money, as it will increase the number of blood nuggets dropped.
+
+This perk also synergizes very well with #Gold is Forever preventing the blood nuggets from despawning, and can be left for healing later if need be.
+** Exploding Gold
+Nuggets of gold explode once they expire or are picked up. 	No, but not removed from the pool 	The explosion can destroy terrain, but doesn't hurt the player.
+** Strong Levitation
+You can fly 100% longer. 	Yes 	Your levitation bar is doubled.
+
+Because it is a direct extension, to recharge your flight to max capacity, you must also wait on the ground for twice as long.
+
+Stacking doubles the levitation bar again with every stack.
+** Faster Levitation
+You levitate 75% faster. 	Yes 	Stacking increases levitation speed further.
+
+** Faster Movement
+Your movement speed is increased. 	Yes 	You move about ~40% faster. Stacking increases speed further.
+
+** Never Skip Leg Day
+Your kicks deal extra damage and knockback. 	Yes 	Increases kick damage by 60 and greatly increases enemy knockback.
+
+Kicking physical objects (carts, crates, etc) will send them flying.
+** Telekinetic Kick
+You gain new telekinetic powers. 	No 	Pressing the kick button now causes objects the player is looking at to hover directly in front of them.
+
+Pressing kick again with a held object launches it in the direction the player is looking.
+
+This may be used to collect gold nuggets from a distance.
+
+Stacking this perk with Never Skip Leg Day will allow you to throw objects even harder. Stacking too many will usually cause objects to "skip" past enemies, leaving them unharmed.
+
+You cannot perform normal kicks with Telekinetic Kick, preventing you from kicking powders around, and no longer being able to disarm or damage enemies with direct kicks.
+
+Objects that are grabbed and thrown with Telekinetic Kick will not directly be able to trigger "trick kills", which can make utilizing perks that rely on them (such as Trick Blood Money) more difficult.
+
+You may also use picked up objects to provide you with portable cover, though it may get in the way of your shots.
+
+This perk also synergizes with Lukki Mutation allowing player to fly by pressing up and using hovering object.
+** Repelling Cape
+Stains drop at a fast rate (when moving). 	Yes
+
+Max 8
+	Stains go away much faster while you are moving. This also applies to potions, making the effects they grant much harder to maintain.
+
+Synergizes well with perks that require a clean cape, such as Invisibility or Stainless Armour.
+
+Being constantly dry will make you much more likely to be set on fire.
+
+Stacking makes stains fall off even faster. Just two stacks dries stains practically as soon as you exit the liquid. However, stacking ten or more times will reverse the normal affect making stains unaffected by movement, although stains can still be removed through other means.
+** Exploding Corpses
+Enemies explode upon death, but you gain immunity to explosive damage. 	No 	Explosions often scatter gold, set off traps, and start fires.
+
+By destroying at least most of the corpse, this perk may lessen the amount of blood and overall clutter.
+** Saving Grace
+If you would die and have more than 1 HP, your HP is set to 1 instead. 	No 	Prevents death from a single high-power attack, but is ineffective against rapid damage. Unlike the Extra Life perk, Saving Grace is reusable, and will recharge after healing above 1 ♥
+.
+
+Saving Grace will not save you while polymorphed.
+** Invisibility
+You're invisible. Stains, casting spells, kicking and taking damage removes the effect temporarily. 	No 	Grants the player an infinite Invisiblium effect. Synergizes well with Repelling Cape.
+
+Having two instances of the perk removes the wait time to go invisible when a stain is removed, but not when you kick or use a wand.
+
+Spells affected by a Boomerang modifier will not arc towards the player while invisible.
+
+Makes throwing Emerald Tablet safely.
+** More Blood
+Blood blood blood. 	Yes 	All creatures (including the player) bleed more.
+
+This includes unusual 'blood', such as Worm Blood (such as Mato) or Lava (fire-themed enemies such as Stendari) when hurt.
+
+This also affects items that give off material when destroyed, such as oil lamps.
+
+Can synergize well with Vampirism.
+Stacking increases the amount of extra blood.
+** All-Seeing Eye
+You can now see everywhere. 	No 	Removes all darkness from the world, revealing the entire screen without needing to see an area first.
+
+Works everywhere, even in places the spell variant would not.(such as Dark Cave)
+** Levitation Trail
+Flying leaves a trail of magical sparks that harm passing creatures. 	Yes 	Similar to the Barrier spell. The sparks from this perk deal 3 damage each and may linger in the air for approximately 5 seconds.
+
+Sparks spawned by this perk do not damage objects such as explosive barrels.
+
+The sparks are projectiles and are affected by #Homing Shots. When homing, the sparks can freely move through walls.
+
+Possible bug (confirmation needed): The sparks are able to damage friendly characters or pets such as the Homunculus or Plague Rats, which will cause those characters to retaliate against the player. Because these pets are immune to other attacks by the player, this is probably a bug.
+
+The sparks can collide with the Energy Shield spell and Permanent Shield perk, causing them to momentarily break and recharge.
+
+You will not create a trail while invisible, however cannot become invisible while the trail is firing.
+If you wish to utilize the Invisibility perk, you must wait for it to activate before levitating.
+
+Makes becoming polymorphed even more hazardous, as they may damage you and kill you.
+
+The damage it deals will trigger a Vaihdosmestari's position swap with the player.
+** Vampirism
+You lose 25% maximum health, but can replenish health by drinking blood. Blood doesn't affect satiation level. 	No 	Blood can be drank from the world or from a flask, the latter restoring +4 ♥
+per 10% (a single drink).
+
+Health per amount of blood drank is the same whether drank from a flask or the world.
+
+It synergizes well with the More Blood perk, and any other means of generating more blood from enemies. The Unlimited Spells perk is also great with Vampirism, since spells which produce blood (such as the Blood material spell) will have unlimited uses. Also synergizes well with slice damage spells.
+
+Anti-synergistic with Eat Your Vegetables as blood can no longer be used for that.
+Anti-synergistic with Freeze Field, as all blood near you will freeze, and getting blood into a flask will become significantly more difficult.
+It also pairs poorly with Exploding Corpses, because you won't be able to dig or blow up corpses for additional blood.
+
+Max health removed is calculated from your current total max health. Remember to pick up Full Health Regeneration after picking up the perk.
+
+It is recommended to fill a flask with blood and drink from it, rather than the ground directly. This will prevent you from becoming sick due to accidentally eating rotten meat, and will allow you to 'filter' what you end up drinking, in case other liquids are in the vicinity (especially ones that cause you to throw up like Invisiblium and Ambrosia, which make collecting blood harder). Alternatively, Iron Stomach can be picked as a synergy that does away with these inconveniences.
+** Extra Health (One-off)
+50% extra maximum health. 	Yes 	Bonus calculated from player's current maximum Health at time the time of acquiring.
+
+Does not affect any future changes to max health. May be stacked.
+
+This will not work if Glass Cannon has been taken.
+** Stronger Hearts
+Hearts bestow double the maximum HP. 	Yes
+
+Max 9
+	Increases HP gained from Extra Max Health and the rarer Large Extra Max Health pickups.
+
+Works by increasing a multiplier for these pickups.
+The player starts out with a 1x multiplier for these pickups (+25 ♥
+for Extra Max Health, +50 ♥
+for Large Extra Max Health).
+
+The first time this perk is picked, the multiplier is increased to 2x (+50 ♥
+for Extra Max Health, +100 ♥
+for Large Extra Max Health).
+Subsequent stacks increase the multiplier by a further 0.25x (additive), so 5 stacks are needed to achieve a 3x multiplier, and 9 stacks are needed to achieve a 4x multiplier (+100 ♥
+for Extra Max Health, +200 ♥
+for Large Extra Max Health).
+
+Additional stacks beyond 9 will have no effect, even if more are spawned in with mods.
+
+This will not have any benefit if Glass Cannon has been taken.
+** Glass Cannon
+Your spells deal 5x damage and have larger blast ranges, but your maximum health is capped to 50. 	Yes
+
+Max 2
+	Explosions and blasts caused by the player are 5x larger. If health is below 50 ♥
+, it will be set to 50 ♥
+. Max health can still be reduced below 50 ♥
+via Vampirism.
+
+Picking up a health increase will give the message: "Health increased by [#] ..but some sort of curse blocked the increase of maximum health!"
+The player's maximum HP can only be increased using the Holy Mountain Health Regeneration pickups, but re-applying this perk will reset your max HP to 50 ♥
+. Picking up Maximum Health upgrades will not reset the health to 50 ♥
+.
+
+You can only have two copies of Glass Cannon, any additional stacks after that will have no effect.
+
+Glass Cannon has a peculiar interaction with the perk Living on the Edge when stacked (see details there).
+** Living on the Edge
+When under 25% of max HP or under 25 hp in general, your spells deal 3x damage. 	Yes
+
+Max 3, but not removed from the pool
+	You can stack this perk up to three times, squaring (x9) or even cubing (x27) the damage multiplier.
+
+The damage multiplier from Living on the Edge stacks with Glass Cannon, but obtaining this perk prevents Glass Cannon from stacking twice
+in the future (obtaining it does not remove the 25x multiplier from having already obtained two stacks of Glass Cannon).
+The damage multiplier from Living on the Edge or Glass Cannon stops at three cumulative stacks (a maximum of 75x if 2 Glass Cannons are
+picked up before Living on the Edge, 45x if 2 Livings on the Edge and 1 Glass Cannon are picked up in any order, or 27x for 3 Livings on
+the Edge).
+** Extra Life
+Upon death you respawn with 100 health. 	Yes 	Upon dying, your health is set to 100 ♥
+once.
+
+You do not 'respawn' somewhere safe.
+You will not be saved from death while polymorphed.
+
+Can trigger multiple times when having several stacks.
+** Worm Attractor
+Worms of the world come to you. 	Yes 	Causes worms to be attracted towards the player's general area.
+
+Seems to increase rate of Jättimato and other worms. Also seems to increase the number of Kalmamato that spawn in the Temple of the Art.
+
+This perk can make getting Worm Blood and Health Pickups much easier.
+It synergizes with Melee Immunity quite well, allowing you to use the worms to dig through extremely durable materials like temple brickwork without risk of direct harm.
+However, the ghastly Death Worms (Kalmamato in-game), which deal curse damage, will still be a threat.
+** Enemy Radar
+Detects nearby enemies. 	No 	Red circles will appear around you, indicating the distance and direction to nearby enemies.
+
+
+Enemies inside the screen will also be marked by their locations.
+The larger a marker is, the closer the enemy.
+** Wand Radar
+Detects nearby wands. 	No 	Green circles will appear around you, indicating the distance and direction to nearby wands.
+
+
+The larger a marker is, the closer the wand.
+** Fire Immunity
+You take no damage from fire. 	No 	You can no longer be set on fire.
+
+Does not prevent damage from lava, fiery explosions, and direct fire attacks like those from Stendari.
+** Toxic Immunity
+You take no damage from toxic sludge and other toxic things. 	No 	Prevents the Toxic Sludge stain, causing Toxic Sludge to remove stains instead.
+
+Also prevents damage from Toxic Gas, Toxic Ice, Toxic Rock, and Toxic Gold.
+
+Does not prevent damage from Acid, Frozen Acid, Poison, and/or poison stains.
+** Explosion Immunity
+You take no direct damage from explosions. 	No 	Player is still affected by harmful material generated by certain explosions, including fire, toxic sludge, acid, electricity, and/or freezing vapour.
+** Melee Immunity
+You take no damage from close-range enemy attacks. 	No 	Can cause many enemies to become completely harmless to the player.
+
+This includes 'tentacle-type' attacks such as the Jättikonna's tongue and the Turso's tentacle.
+** Electricity Immunity
+You take no damage from electric shocks. 	No 	This perk may be preferable over the Electricity perk, which is capable of activating traps and triggering explosives.
+
+Note that many electricity-based spells also deal explosive damage, and so this perk is not sufficient to grant immunity to Lightning Bolt and similar spells.
+** Teleportitis
+Damage is reduced by 20%. Every time you take damage, you teleport away. 	No 	Any amount of damage (including damage-over-time effects like fire or toxic sludge) will make player randomly teleport to a random off-screen location.
+This includes blocked damage, and even healing damage from healing projectiles.
+Can be used when speed running.
+Can teleport into harmful material, such as lava or acid.
+** Teleportitis Dodge
+You teleport a short distance away when an enemy projectile is near. 	No 	A much more stable and reliable version of #Teleportitis.
+** Stainless Armour
+You take 50% less damage as long as you have no active stain status effect. 	Yes 	Stacking halves damage every time.
+
+Many stacks will make you immune to any damage.
+Synergizes well with the perks Repelling Cape, Gas Blood and Freeze Field.
+** Tinker with Wands Everywhere
+A divine blessing allows you to tinker with wands everywhere. 	No 	Enables the editing of wands outside of the Holy Mountains.
+
+
+Allows you to strip away the spells from any wand you find, as well as replace spells with depleted charges with fresh counterparts on a whim.
+** No Wand Tinkering
+Wands cannot be tinkered with, but enemies may drop blood money. 	No 	Gives a 6% chance for an enemy to drop blood money instead of normal gold.
+
+Removing wand editing in exchange for enemies sometimes dropping blood money (which heals a small amount when picked up) is a bad play in
+almost any situation, because without wand editing, you will have to rely entirely on a wand you built before receiving the perk, or
+randomly generated wands found in the game.
+
+If the player has both this perk and the Tinker with Wands Everywhere perk, the player can edit wands in the Holy Mountain as normal,
+but not outside of it.
+
+Having multiples of either/both perks does not seem to change this interaction.
+** Wand Experimenter
+Firing newly found and unmodified wands heals you. 	Yes 	This perk heals a different amount for shuffle and non-shuffle wands, over the course of 7 casts with each cast halving the HP healed per use.
+Shuffle: +104 ♥
+per wand (+48 ♥
+, +24 ♥
+, +12 ♥
+, +8 ♥
+, +6 ♥
+, +4 ♥
+, +2 ♥
+).
+Non-Shuffle: +69 ♥
+per wand (+30 ♥
+, +15 ♥
+, +9 ♥
+, +6 ♥
+, +4 ♥
+, +3 ♥
+, +2 ♥
+).
+
+The perk still works even if the new and unedited wand has no spells on it, or has a spell similar to Torch that has no cost or cast effect.
+The perk still works if spells are removed from a wand if they are dropped on the ground, as long as no spells are added or re-ordered.
+** Bombs Materialized
+Bomb-like spells can be placed in the ITEMS space in inventory and thrown without a wand. 	No 	The TNT, Bomb, Glitter Bomb, Propane Tank and Holy Bomb spells may now occupy item slots.
+
+Spells can still only be moved around the inventory in Holy Mountain, except with Tinker with Wands Everywhere perk.
+** Homing Shots
+All your spells home towards enemies very slightly. 	No 	Static projectiles such as Death Cross, Slime Mist and the sparks of Levitation Trail will reliably follow targets, while fast projectiles like Magic Arrow will only curve slightly.
+** Boomerang Spells
+Your spells arc towards you, but gain extra speed and deal extra damage. 	No 	Be wary of using explosives with this perk. Long-lasting spells, such as Dormant Crystal, can follow you around indefinitely.
+
+Conversely, high-velocity spells like Spark Bolt may curve up or down in an odd manner due to their attraction to you.
+
+This perk can throw off your aim, so this perk is not recommended for novice players.
+The perk increases spell lifetime by 20 frames (1/3 second), and synergizes well with Luminous Drill.
+The perk adds 15 projectile damage to spells, anti-synergizes with Healing Bolt.
+This can be counteracted by Light Shot, Piercing Shot or Divide By.
+
+The perk has little to no effect on depleted projectile spells when used with Greek letter spells.
+For example, if you have 1 magic missile left and you shoot it, it will curve towards you.
+However, if you have 0 magic missiles and you shoot one with a Greek letter spell, then the missile travels in a linear fashion.
+** Unlimited Spells
+Most spells are now unlimited. 	No 	Does not work for: Black Hole (+ Death Trigger), Healing Bolt, Circle of Vigour, Matter Eater, Mana to Damage, Worm Launcher, Omega Black Hole, Giga Holy Bomb, Giga Nuke, Touch of Gold, Spells To Nukes, Spells To Black Holes, Spells To Death Crosses, Spells To Magic Missiles, Matosade, Meteorisade, Summon Taikasauva, and The End of Everything.
+** Freeze Field
+Freezes liquids around you. 	No 	Extinguishes fires, and freezes most liquids near you, but will not freeze liquids that do not have a frozen material counterpart (like oil or magic potions).
+
+Also gives immunity to fire damage, even to some direct fire attacks like those from a Pikkutulikärpänen. Additionally makes the player virtually immune to Lava and Poison, as those normally extremely dangerous liquids are harmless when frozen.
+
+Synergizes poorly with #More Blood, frequently causing the player to become trapped in their own frozen blood mid-battle. Also removes the ability to gather freezable liquids.
+
+Synergizes well with Stainless Armour, as fewer liquids will be able to stain you, even preventing your own blood from getting on you (however you may get stuck in your frozen blood, especially if you have #Slime Blood).
+If you have Oil Blood, you can prevent getting stuck in ice, as oil will not freeze, however this is anti-synergistic with #Stainless Armour, so #Gas Blood is the best chioce.
+** Gas Fire
+Gases near you ignite automatically. 	No 	Will ignite any gas in a decent radius around you.
+
+If you don't yet have Toxic Immunity, this will provide protection against Toxic Gas.
+Exceptionally useful for its unique ability to protect against Freezing Vapours.
+This perk will also nullify the risk of suffocating in gas clouds without Breathless.
+
+While you are normally not likely to catch on fire as a direct result of the gas ignitions, teleporting into gas clouds will likely cause you to catch fire. The player should also be wary of fires which may start as a result of igniting small amounts of common gases in the environment, such as Smoke or Steam.
+
+Note that Cloud material, although static and solid to non-physics bodies, is actually a gas, so navigating the Cloudscape with this perk may be difficult.
+** Dissolve Powders
+Sand and other soft, powdery materials dissolve quickly in your presence. 	No 	A small radius around the player will instantly destroy things like coal, gunpowder, sand, snow, bone dust, and more.
+
+See the Materials page for more details.
+
+This is especially useful when utilizing the Ground To Sand spell.
+** Slime Blood
+You bleed slime, but slime no longer slows you down and you have higher projectile resistance. 	Yes 	Confers 25% projectile resistance, applied directly to the player's current damage multipliers.
+
+This effect can stack, and also stacks with other sources of projectile resistance.
+Also increases how much the player bleeds (more stacks will further increase the amount bled).
+
+Taking this perk after Oil Blood will overwrite the material bled by the player, causing them to bleed slime instead of oil, but the player will still retain the increased blood multiplier (which will stack with the one given by Slime Blood) and the fire immunity.
+** Oil Blood
+You bleed fast-burning oil, but are immune to fire. 	No 	One of three perks which can grant immunity to fire (the others being Fire Immunity and Freeze Field), making it very useful when you don't already have either of the others.
+
+
+This perk will not make you immune to the slippery effects of oil, which can be a nuisance.
+Also increases how much the player bleeds (more stacks will further increase the amount bled).
+
+Taking this perk after Slime Blood will overwrite the material bled by the player, causing them to bleed oil instead of slime, but the player will still retain the increased blood multiplier (which will stack with the one given by Oil Blood) and the projectile resistance.
+** Permanent Shield
+You gain a small, permanent shield. 	Yes
+
+Max 5
+	A small shield will make smaller projectiles bounce off and break after a certain amount of damage.
+
+
+The shield will reappear shortly after breaking.
+Stacks with other shield spells for increased protection. Higher stacks create a bigger shield.
+Damaging projectiles bounce off of shields, potentially hitting enemies or explosives.
+
+Due to its smaller size, the shield may not always protect you from very high-velocity or large-hitbox projectiles.
+
+The shield is damaged by Levitation Trail sparks, even though the player is not.
+
+Stacking the perk will result in more layers of shield which must be broken individually, giving several layers of resistance to projectile damage.
+
+The shield can interfere with some spell configurations, e.g. infiniwisps.
+** Revenge Explosion
+You release a magical explosion upon taking damage, and gain 25% resistance against explosions. 	Yes 	The perk will trigger on any amount of damage.
+
+Your explosion can activate other explosives and create fires, but will not itself set the player on fire.
+
+The explosion destroys many sources of damage, including Freezing Vapour and other harmful gases, making it a useful alternative to Gas Fire. It can also eliminate Earthquake material, Lava, Acid, some enemy projectiles, etc.
+
+Confers 25% explosion resistance, applied directly to the player's current damage multipliers.
+This effect can stack, and also stacks with other sources of explosion resistance.
+** Revenge Tentacle
+You summon a monstrous tentacle upon taking damage, and gain 25% resistance against projectiles. 	Yes 	Causes a tentacle to emerge from the player and hit anything that damages the player.
+
+This also includes taking damage from various passive sources of damage, like lava or damage-over-time effects, causing the tentacle to sometimes flail randomly.
+
+Confers 25% projectile resistance, applied directly to the player's current damage multipliers.
+This effect can stack, and also stacks with other sources of projectile resistance.
+** Revenge Bullets
+You return projectiles back to enemies upon taking damage, and gain 20% resistance against projectiles & explosions. 	Yes 	The perk has a 'cooldown' of 10 frames, or 1/6th of a second, during which it will not trigger.
+
+The return projectile is not guaranteed to hit, but will be aimed at the enemy which fired the shot (if it is still alive).
+
+The speed of the return projectile is random, typically somewhere around the speed of a Spark Bolt, and the damage of the return projectile is double the damage of the received shot.
+
+Confers 20% projectile and explosion resistance, applied directly to the player's current damage multipliers.
+This effect can stack, and also stacks with other sources of projectile or explosion resistance.
+** Lukki Mutation
+You grow curious additional limbs that fight for you. 	Yes
+
+Max 3
+	Slightly increases movement speed and gives the player unlimited flight, but the player can only fly while at least one limb is touching a solid surface. Good for claustrophobic areas but severely limits your vertical mobility in large open spaces.
+
+
+The player will gain a burst of speed when surfacing from a liquid, and this can be used to reach higher surfaces.
+The Faster Levitation perk can similarly increase the vertical reach of the player.
+
+This perk can be stacked multiple times. Stacking increases length of the legs as well as movement speed gained from the perk.
+
+This perk also synergizes with Telekinetic Kick allowing the player to fly by pressing up and using hovering object.
+** Plague Rats
+Enemies that die near you spawn hungry rats to serve your bidding. 	Yes
+
+Max 5
+	Rats no longer attempt to harm you, except after friendly fire, due to Berserkium or possibly with the #More Hatred perk.
+
+Plague Rats are much stronger than regular rats but disappear after a while. Good for combating and distracting groups of ground based opponents.
+
+Damage and HP of Plague Rats scales with their Y coordinate, meaning they will be stronger the deeper you are below the mountain.
+
+Additional stacks will cause more rats to spawn with each enemy death.
+
+Collecting all 3 of Plague Rats, Revenge Rats, and Spontaneous Generation will cause the player sprite to grow a rat tail.
+A rat tail increases movement speed by 15%.
+** Feared by Worms
+Worms run away from you, and worms and lukkis no longer destroy ground while burrowing. 	No 	Primarily used to prevent the gods from being angered by Worms and Lukki from destroying the brickwork around the Holy Mountain sanctuaries. Also makes them safer to the player.
+
+Will also prevent them from destroying items like Emerald Tablets, Chaos Dice, etc.
+
+Makes Traversing Lukki Lair safer, as movement by the more aggressive Lukki (like the Kammolukki) will be significantly hindered.
+
+A major downside to this perk is that you can no longer use Worm/Lukki tunnels as a means of returning to previous areas, and polymorphing into a worm will likely result in getting stuck in the terrain (and suffocating if you don't have #Breathless).
+** Projectile Repulsion Field
+Most projectiles are repulsed by your presence, but you take slightly more projectile damage. 	Yes 	You take 26% more damage from projectiles.
+
+Projectile spells you cast fly faster / further as they are repelled from the field, such as Black Holes now going 3x+ the distance.
+
+However, this also causes a very slight variation in their flight pattern from your body, i.e. you'll point straight and it will go slightly up or down (A Linear Arc or Homing can resolve this).
+
+Has (solvable) Healing Bolt#Anti-Synergies
+** Projectile Slower
+Projectiles near you slow down. 	Yes 	Every stack will cause projectiles to decelerate quicker, including the player's.
+
+This can be countered by Projectile Repulsion Field's projectile acceleration, and even synergizes with Projectile Repulsion Field for increased projectile protection.
+** Projectile Repulsion Sector
+Projectiles that fly into a small sector in front of you get blown away. 	Yes 	Behaves as a much stronger version of the Projectile Repulsion Field.
+
+Goes outward in a cone formation with a repulsion zone behind the barrier, which throws enemy projectiles off course.
+
+Projectile Repulsion Sector gets stronger with each perk stack.
+
+The player's projectiles will also be affected as they pass the edge of the sector.
+** Projectile Eater
+Projectiles that fly into a small sector behind you disappear. 	No 	Stacking has no effect and all projectiles, including the player's, will be consumed by the field.
+
+Does appear to affect static projectiles.
+** Phasing
+Projectiles seemingly phase through you. 	Yes 	Every frame that a projectile in a small radius around you moves slower than a basic Spark Bolt, there is a 50% chance for that projectile to teleport behind you instead of hitting you.
+
+Slower projectiles will be more likely to phase. Does not protect you from your own spells.
+
+(Hidden stat): Also increases damage taken by projectiles and explosives by 33%.
+
+Applies to healing projectiles from Hiisi Healers, making them much less effective at healing you when charmed.
+
+Synergizes with Projectile Repulsion Field and Projectile Slower, because the field will slow down projectile speeds, giving more opportunities for phasing.
+** Angry Ghost
+An angry spirit comes to your aid, copying nearby spells and projectiles 	Yes 	Spawns a red ghost that follows you around. This ghost will copy and shoot projectiles shot by you, enemies, and traps.
+
+Projectiles fired in this manner do not appear to harm you, although their explosions still can. Additionally, Healing Bolt can heal you if fired by the ghost into water or with Piercing Shot.
+
+The ghost will copy some normally limited spells, such as Black Hole, and will fire using the cast-delay of the currently held wand. Both of these traits can be used to great effect.
+
+The ghost appears to favour some projectiles over others, and may become "locked" on a projectile that makes life difficult or dangerous for the player, for example Summon Rock. This has been confirmed as intended behaviour, so care should be taken when choosing which projectiles to fire after taking the Angry Ghost perk.
+
+Collecting all 3 of Angry Ghost, Hungry Ghost, and Mournful Spirit will give the player a ghost companion and increase the levitation time by 15%.
+** Homunculus
+Every time you leave a Holy Mountain, a helpful homunculus is summoned. 	Yes 	A homunculus will spawn whenever you leave a Holy Mountain for the first time. Triggering the collapse is not necessary and it doesn't matter if you leave towards the bottom or top.
+
+There is no limit to how many homunculi can follow the player at any time. The homunculus attacks with one of 4 different types of projectiles.
+
+Stacking the perk gives Homunculi extra damage, and increases the maximum count of Homunculi you can have.
+
+They will attack any non-player creatures and will teleport to the player if they are separated. They will drown themselves in liquids even if it would be possible to swim to safety.
+
+They can damage the player. Given their tendency to teleport close to the player they are a hazard for players with little health or close to dangerous environment.
+
+Homunculi may directly target the player if polymorphed into a normally hostile enemy resulting in almost immediate death. Exercise extreme caution around Chaotic Polymorphine.
+** Electricity
+You're immune to electric damage but metal and liquids electrify around you constantly. Look out! 	No 	Electrified metals and liquids can cause combustion and activation of explosives. Also makes collecting flasks in liquids much harder.
+
+Synergizes well with perks relying on "trick kills" (such as #Trick Blood Money), as enemies killed by the electric current will be considered as such. (Sea of Water)
+
+Has an anti-synergy with Teleportitis, as even though the damage from the electric current is blocked, it may still activate Teleportitis, and makes it even harder to control.
+** Attract Gold
+Gold nuggets gravitate towards you. 	Yes
+
+Max 6
+	Attracts gold nuggets towards the player and increases in strength the closer it is to the player.
+
+Additional stacks increase the attraction strength and the attraction range.
+
+Does not apply to gold powder.
+** Extra Knockback on Spells
+Your spells knock enemies back more. 	Yes 	This perk will fling enemies further away when hit by a projectile. Useful for fighting melee enemies.
+
+When using weak, but fast spells like Bouncing Burst, you may find yourself disadvantaged by the fact that your aim is thrown off by the enemy's recoiling.
+
+The minimum 'knockback' value to cause an enemy to 'flinch' is generally either 0 or quite large, so this perk will generally cause enemies that are already susceptible to knockback to be knocked back further, but will not usually result in knocking back more enemy types (for example, past the Underground Jungle most enemies have a minimum knockback value of 100000 to stagger, while this perk adds 6).
+** Concentrated Spells
+Your spells have lower spread and extra damage, but have increased cast delay. 	Yes 	Reduces spread by 25 degrees for each projectile or static projectile in the cast.
+
+Increases damage by 12.5 points and cast delay by 2 frames (0.033 of a second) for each projectile or static projectile spell.
+
+The added recoil can be used as a crude jetpack or jump extender by firing opposite of where you wish to go.
+
+Might slow digging operations, as you will be pushed back from whatever you're digging without careful spell arrangement.
+Chainsaw wands in particular become a jetpack.
+
+Has an anti-synergy with Healing Bolt - the bolt will harm the player for 12.5 damage per projectile or static projectile spell in the cast. This can be counteracted by Light Shot, Piercing Shot, or Divide By, or by staining yourself with Ambrosia.
+
+See also:
+The Best Perk In Noita?! - DunkOrSlam
+** Low Recoil
+Recoil caused by your spells is greatly reduced, but your spells fly slightly slower. 	No 	Decreases projectile speed by 20%.
+** Bouncing Spells
+Almost all your spells bounce around. 	No 	This perk will cause spells like Energy Orb and Magic Missile to no longer immediately detonate on impact with terrain.
+
+As a result, their digging potential becomes greatly hampered.
+
+Increases spell lifetime by 60 frames (1 second) and makes them bounce 3 more times.
+Synergizes well with Luminous Drill. This can't be counteracted by Remove Bounce.
+** Faster Projectiles
+Your projectile spells fly faster than before. 	No 	Increases projectile speed by 75%.
+
+It multiplies in power based on how many spells are bundled with a multicast.
+** Always Cast (One-off)
+Adds a random spell as "Always Cast" to the equipped wand. 	Yes 	A wand can have a maximum of 4 Always Cast slots.
+
+Taking this perk is always a gamble, as many spells can be detrimental as an Always Cast.
+The perk is bugged in the current state and cannot select spells from Static Projectile, Modifier or Utility categories like it is meant to.
+Instead, when one of those categories is picked, a projectile spell is spawned instead.
+When applied to the starter bomb wand it may create a powerful rapid fire wand in early games.
+
+It will never give you a spell that is categorized as Multicast, Material, or Other.
+Spell/Category 	Probability
+Random Tier 6 Projectile spell 	50%
+Damage Plus 	8.33...%
+Critical Plus 	8.33...%
+Homing 	8.33...%
+Speed Up 	8.33...%
+Acid Trail 	8.33...%
+Slithering Path 	8.33...%
+
+** High Mana, Low Capacity (One-off)
+Your one (1) currently held wand loses half its capacity, but gains more mana. 	Yes 	Increases max mana of the wand between 100-600, up to 20000.
+
+Randomly increases the mana charge speed by 100-300, or multiplies it by 2x to 3.5x, whichever is less. Caps at 20000.
+
+Halves the wand's capacity, rounding down. The exception is if a wand would be left with zero capacity.
+** No More Shuffle
+Most of the wands will be non shuffling. The wands you carry with you turn into non-shufflers too. 	No 	All carried wands have shuffle set to 'no'.
+
+Most future wands generated will be non-shuffle. Wands that would have been shufflers still have their superior stats.
+
+Does not affect wands that have already generated if they are outside of the loaded area when the perk is picked up.
+Will also affect wands that have already been picked up and left on the floor.
+** No More Knockback
+Enemies can't knock you back. 	No 	Also prevents you from being knocked out of the air when hit.
+
+** Projectile Duplication
+Your projectile spells have a chance to duplicate, but you're more vulnerable to projectile damage 	Yes 	You have a 50% chance to shoot a projectile spell twice, but you take 25% more damage from projectiles.
+
+Applies to every projectile individually (i.e. a triple multicast of a spell can fire between 3-6 projectiles)
+
+All projectile modifiers apply, including cast and recharge delay, but not mana drain.
+
+Triggers are sometimes ignored, with spells intended to be cast following a trigger or trigger-like effect (e.g. Delayed Spellcast) being cast from the player directly.
+Avoid picking up this perk if you are using dangerous spells that need to be cast at a distance.
+
+Each additional stack will add one more projectile if the perk succeeded.
+** Faster Wands (One-off)
+All four (4) wands you're currently carrying gain a bonus to their cast delay & reload time. 	Yes
+Reduces the reload time and cast delay of all held wands by 20% + 5 frames (rounded towards zero), and increases their mana charge speed by 30.
+
+When applied to the bomb wand may crate a powerful rapid fire wand in early games.
+
+Caps at -0.35s for reload time and cast delay. Can exceed the 20000 mana charge speed limit from High Mana, Low Capacity.
+** Extra Wand Capacity (One-off)
+All four (4) wands you're currently carrying gain 1-3 additional spell slots (to a maximum of 25). 	Yes 	Adds 1-3 spell slots to every wand you're carrying, up to a max of 25.
+** Extra Perk
+From now on, you will find an extra perk in every Holy Mountain. 	Yes
+
+Max 5
+	Stacking creates additional perk slots. Note that if you previously visited another holy mountain, it will not gain another perk.
+
+Synergizes well with Perk Lottery, and re-rolling perks.
+** Perk Lottery
+When you pick a perk, there's a 50% chance the others won't disappear. 	Yes
+
+Max 6
+	Can also trigger when Perk Lottery itself is first picked.
+
+The effect can be stacked if multiple instances are picked up via perk re-rolling.
+
+If the effect triggers, re-rolling perks will only re-roll the amount of perks remaining on the altar.
+** Extra Item in Holy Mountain
+Additional item in every shop you haven't visited. 	Yes
+
+Max 5
+	Wand shops will contain one extra wand, and spell shops will contain two extra spells.
+** More Hatred
+Creatures in the world are more aggressive towards each other. 	Yes 	Causes enemies not of the same group (e.g. Hurtta and Haulikkohiisi) to attack each other on sight.
+
+With three stacks, enemies will attack each other regardless of affiliation.
+
+This perk may result in unpredictable and chaotic behavior from groups of enemies as they constantly attack each other, often breaking flasks of potentially hazardous or otherwise valuable magical liquids in the process.
+
+Synergizes with Gold is Forever, preventing gold being lost by off-screen deaths.
+
+Can cause allies to turn on you.
+** More Love
+Creatures in the world are more friendly to each other. 	Yes 	Reduces infighting, such as making most enemies passive to Rats.
+
+Useful for reducing unfavorable situations that result from infighting, such as flasks getting broken, nukes being fired, etc.
+
+With four stacks, enemies will always friendly. Increases "Relation" by 25 per stack (see the More Love and Factions pages for more information).
+** Peace with Gods
+You make peace with your gods. 	No 	Applies a permanent charm effect to all Stevari (or Skoude) and also prevents the gods from being angered by defiling the Holy Mountain.
+
+However, since you cannot anger the gods, you will not be able to summon Stevari in future Holy Mountains.
+
+This means that aside from any that have already spawned before picking this perk up, the only Stevari you will encounter are from very rare natural spawns in certain areas, or created by The End of Everything.
+
+This also means that you will not be able to use Stevari as a reliable source of gold.
+** Kills to Mana
+Every time an enemy near you dies, you release mana-recharging liquid. 	No 	Does not actually produce any permanent liquid.
+
+Instead, each enemy death provides the player with a short duration buff that acts similarly to being stained by Concentrated Mana.
+
+Multiple kills will provide separate instances of the buff, potentially stacking up to very high levels of mana regen for a short period. Synergizes well with rapid fire wands.
+** Pinpointer
+Your spells fly faster and have lower spread, and you have a handy sightline for aiming! 	Yes 	Your wands emit an orange laser sight, similar to that of a Snipuhiisi.
+
+Reduces spread by 20 degrees and increases projectile speed by 40%.
+
+This effect is applied per projectile, so casting multiple at once will have an increased effect.
+
+May be used to cause Black Holes to cover extensive distances by multi-casting a Black Hole with other projectiles.
+** Personal Plasma Beam
+You constantly fire a devastating plasma beam, but you fire spells much slower. 	Yes 	While holding a wand, you emit a constant stream of plasma, similar to a miniature version of the plasma beam emitters that are normally found in The Vault.
+
+However, the perk increases the cast delay and recharge time of Projectile and Static Projectile spells by 5 frames each.
+The beam deals 3.75 damage per frame (+0.625 per stack) to entities that it contacts, or 225 damage per second (+37.5 per stack).
+The beam's length is 54 (+12 per stack) and its damage type is Projectile.
+
+You will not emit a beam while holding an item. The beam can dig through materials with a durability of 11 or less.
+This can be useful for getting rid of pools of dangerous liquids, namely Polymorphine, although the process can be rather tedious. The rate of destruction can be increased with more stacks.
+
+The beam will easily break flasks and may set off explosives, so exercise caution. Some spells (such as Acid Ball and Bomb) may be detonated by the beam if it touches them.
+** Close Call
+You gain additional chance to deal critical hits as long as there are enemies near you. 	Yes
+
+Max 3
+
+Close Call range
+
+Toxic Slime = within range
+Large Bat = outside range
+
+If there are any enemies within a very short range (radius=56), you get +40% critical chance applied to each shot.
+
+So if you have a 4-cast wand and you shoot 4 spark bolts, each spark bolt gets +160% crit.
+When enemies are within range, red particles will surround your body.
+** Contact Damage
+Enemies near you take damage; the damage is higher the lower your health gets. 	No 	The damage type of this perk is Melee.
+
+Has an anti-synergy with More Love, as any creature you come into contact with will become hostile to you. Also has anti-synergy with Invisibility, as any creature you come in contact with will attack in the direction that they were harmed from.
+
+Can cause massive pools of blood/slime/oil to form, especially with More Blood.
+** Cordyceps
+Fungal creatures spawn from the corpses of enemies killed by you. 	No 	Fungal creatures explode on death, which can potentially damage a player without Explosion Immunity.
+
+The description is somewhat misleading: the fungal creatures will spawn from all dead enemies, not just those you killed directly.
+The Gold is Forever perk can be useful, since there will be a lot of fungus-related deaths around the map.
+
+Kills from exploding fungal creatures count as accidental deaths, synergizing well with Trick Greed and Trick Blood Money.
+
+Collecting all 3 of Cordyceps, Fungal Colony, and Fungal Disease will cause the player sprite's head to turn into a mushroom and give 10% resistance to explosion damage.
+** Eat Your Vegetables
+You gain more damage the more satiated you are, but you start losing health if your stomach is empty. 	No 	Also spawns a potion of Hearty Porridge, which when consumed applies the healing buff effect for a percentage-based heal.
+
+To increase satiation (without getting poisoned) you can consume: Blood, Worm Blood, Meat, Hearty Porridge, or Pea Soup.
+
+Won't add damage to spells that heal, unlike other damage-increasing perks.
+Synergizes with Iron Stomach and Stainless Armour.
+Iron stomach also enables Slime and Slimy meat as feasible food sources, among other substances.
+
+Be careful with explosions, especially Exploding Corpses, as they will very likely remove food sources.
+
+The bonus damage function is:
+
+0.4 s a t i a t i o n − 24 ; s a t i a t i o n < 1060 {\displaystyle 0.4satiation-24;satiation<1060}
+
+400 ln ⁡ ( s a t i a t i o n − 60 900 ) + 381.96 ; s a t i a t i o n > 1060 {\displaystyle 400\ln({\frac {satiation-60}{900}})+381.96;satiation>1060}
+
+Once satiation drops below 25%, the player will take about 0.7% of their max HP in curse damage every second, down to a minimum of 1 hp.
+** Fungal Colony
+Slime near you spontaneously turns into fungal creatures. 	No 	Also spawns a potion of Slime when obtained.
+
+Only works with purple slime. Green slime, bled by certain Jungle biome creatures, has no interaction with this perk.
+
+Works by deleting slime very close to the player, then spawning a creature once enough has been deleted.
+
+There seems to be a limit on number of nearby creatures spawned this way. Above this limit, slime will still be deleted (likely preventing stains), but no creatures will spawn. Collecting all 3 of Cordyceps, Fungal Colony, and Fungal Disease will cause the player sprite's head to turn into a mushroom and give 10% resistance to explosion damage.
+** Fungal Disease
+When near danger, you sprout fungal growths. 	Yes
+
+Max 3
+	While within a short distance of an enemy, you emit bursts of spore pods at a rapid rate, similar to Prickly Spore Pod.
+
+In some circumstances, these will grow into Blue or Weird Fungus after landing.
+
+Collecting all 3 of Cordyceps, Fungal Colony, and Fungal Disease will cause the player sprite's head to turn into a mushroom and give 10% resistance to explosion damage.
+Has anti-synergy with any Permanent Shield perks or shielding spells, as it will rapidly break all layers of shield around the player.
+** Gamble
+You gain two random perks. 	Yes 	Perks produced by Gamble are automatically given to the player.
+
+Since perks are completely tied to the seed, two random perks mean the same thing as the next two that would appear in the next Holy Mountain that hasn't been loaded in yet.
+
+If Gamble would hit another Gamble, it skips it and gives the next perk instead.
+
+If Gamble gives the player Perk Lottery, the effect will not take place until the next perk is picked up.
+** Gas Blood
+You bleed flammable gas instead of blood. 	No 	Grants toxic immunity, and lowers your personal gravity a little bit.
+
+Gas Blood is the only blood type perk that does not stain the player, making it synergize very well with Stainless Armour.
+
+Taking this will overwrite the material bled by the player.
+If taken after Slime Blood, the immunity to the slowing effect of slime will be retained.
+The fire immunity of Oil Blood will also be retained.
+** Healthy Exploration
+Every time you visit a new area, you regain 60 health. 	No 	This includes areas previously visited before taking this perk.
+
+Reloading the game may refresh the record.
+** Hungry Ghost
+Summons a happy minion who'll eat an enemy projectile every now and then. 	Yes
+
+Max 5
+	Gives the "Damage Boost" buff for 4 seconds when a projectile is eaten.
+
+Collecting all 3 of Angry Ghost, Hungry Ghost, and Mournful Spirit will give the player a ghost companion and increase the levitation time by 15%.
+
+See also: Guide to infinite damage.
+** Item Radar
+You can sense nearby items. 	No 	Sense Health Pickups, Spell Refresher, Potions and Items.
+** Lukki Minion
+Summons a lukki minion to your help. 	No 	Summons a purple small lukki that follows you around.
+
+When on top of an enemy, the foe will take 30 melee damage per second in bursts of 5 damage every 1/6th of a second.
+** Mournful Spirit
+Dying creatures leave behind a spirit that deals damage in a small area. 	No, but not removed from the pool 	It wanders around randomly, dealing curse damage to enemies that come into contact with it.
+
+While it is incapable of harming the player on its own, the enemies it kills still can.
+
+Collecting all 3 of Angry Ghost, Hungry Ghost, and Mournful Spirit will give the player a ghost companion and increase the levitation time by 15%.
+** Rage-fueled Levitation
+Killing an enemy makes you replenish some of your levitation power. 	No
+** Revenge Rats
+When you take damage, there's a chance that you'll spawn a helpful rat minion. 	No 	Collecting all 3 of Plague Rats, Revenge Rats, and Spontaneous Generation will cause the player sprite to grow a rat tail.
+
+A rat tail increases movement speed by 15%.
+** Spontaneous Generation
+Vomit near you evolves into helpful rat minions 	No 	Also spawns a potion of Vomit when obtained.
+
+Collecting all 3 of Plague Rats, Revenge Rats, and Spontaneous Generation will cause the player sprite to grow a rat tail. A rat tail increases movement speed by 15%.
+** Summon Sädekivi
+You gain an artefact that allows you to call the celestial rage. 	Yes 	Spawns a Sädekivi
+** Iron Stomach
+You no longer suffer from negative effects of eating. 	No 	You can eat materials without damage (e.g. lava and poison), and increase satiation without exploding.
+
+Synergizes with Eat Your Vegetables. Has some anti-synergy with Spontaneous Generation as you won't be able to produce vomit anymore.
+
+Has some convenient synergy with Vampirism, essentially removing the need for a designated drinking flask that you would normally use to check for and pour off harmful substances before consuming the blood.
+
+Berserkium will no longer function as it is considered a negative effect for the fact that it angers enemies.
+
+With enough water and Concentrated Mana you can maintain the effect for almost forever.
+
+Drinking any type of liquid that applies an effect (Poison, Flummoxium, Polymorphine, etc.) will make you temporarily invulnerable to that specific effect for a few seconds.
+
+** Leggy Mutation
+You grow disturbing looking limbs that fight for you. 	Yes 	Dropped by Leggy Mimics (Matkija)
+
+Almost the same effects as Lukki Mutation, but featuring human-like legs instead of spider legs. Does not hold you in place, instead requires you to constantly levitate. https://www.youtube.com/watch?v=ISiR9B94tyw
+
+** Curse of Greed!
+You gain 3x gold, but are terribly cursed! 	Yes(??)(Needs Testing) 	You gain more gold, but a curse will haunt you.
+
+Triples the amount of gold that is dropped from enemies, but periodically turns every material or liquid into Greedcursed Rock and Greed-Cursed Liquid respectively, which damage the player on contact.
+
+Slime does not become Greedcursed Liquid, therefore pools of slime are safe.
+Powders, such as coal or gunpowder, will become Greedcursed Liquid.
+
+Spawns a Greed-cursed Crystal inside the Holy Mountain which, when broken, removes the curse completely.
+Shops visited prior to acquiring the perk will not spawn them. Materials that have already been cursed will not revert to their original state.
+
+Received by picking up the Eternal Wealth in the shrine next to the first branch of the Giant Tree
+
+Has some synergy with Lukki Mutation / Leggy Mutation as the unlimited flight means you may come into contact with Greedcursed substances less often.
+** Spatial Awareness
+If you stop for a moment, you can sense your location relative to the Mountain. 	No 	If you stand still for about 2 seconds, a white map will appear.
+
+Red dot 	Your current location.
+Triangle 	The Mountain (with a number above if the user is in a PW).
+7 larger circles 	The 6 Holy Mountains + Laboratory.
+Smaller circles 	The Essences, the Huilu, the Coral & Dark chests.
+Square 	The Nullifying Altar.
+Green dot 	Marks the location of the Friends' room.
+
+
+This perk is dropped by Kolmisilmän silmä. See demonstration.
+** Moon Radar
+You can sense lunar energy. 	No 	-A single white circle will appear around the player, which will always face towards the Moon.
+
+This perk only appears inside the ??? east of the Overgrown Cavern.
